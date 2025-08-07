@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 app.use(cors({
-    origin: 'https://adonis-rntfph9is-vfcfsdfsd.vercel.app'
+    origin: 'https://adonis-5qe0buq87-vfcfsdfsd.vercel.app'
   }));
 app.use(express.json());
 
@@ -15,7 +15,6 @@ const sessions = {};
 
 app.post('/start', async (req, res) => {
   try {
-    // Testa a API com uma mensagem simples
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
@@ -178,11 +177,4 @@ app.post('/message/stream', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-});
-
-app.get('/', (req, res) => {
-  res.send('Hello from backend!');
-});
-app.get('/start', (req, res) => {
-  res.json({ message: "GET start ok" });
 });
