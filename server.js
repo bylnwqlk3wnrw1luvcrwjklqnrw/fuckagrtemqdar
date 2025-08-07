@@ -183,3 +183,6 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
   res.send('Hello from backend!');
 });
+app.get('/start', (req, res) => {
+  res.json({ message: "GET start ok" });
+});
